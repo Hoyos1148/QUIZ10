@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+int R (vector <int> Q1, vector <int>Q2)
+{
+	int RE=0;
+	int x;
+	if(Q1.size() == Q2.size())
+	{
+		for(x=0; x<Q1.size(); x++)
+		{
+			RE = RE + (Q1[x]*Q2[x]);
+		}
+	}
+	else
+	{
+		cout<<"No son del mismo tamaño"<<endl;
+	}
+	return RE;
+}
+
+int P (vector <int> Q1)
+{
+	int x;
+	int T=0;
+	cout<<"del primer vector, solo toma los valores divisibles entre 3 y los suma"<<endl;
+	for(x=0; x < Q1.size(); x++)
+	{
+		if(Q1[x]%3 == 0)
+		{
+			T = T + Q1[x];
+		}
+	}
+	return T;
+}
+
+int main()
+{
+	vector <int>Q1{3,6,9,12,2,4,1};
+	vector <int>Q2{2,3,4,6,9,7,8};
+	cout << P(Q1) << endl;
+	cout << R(Q1,Q2);
+}
